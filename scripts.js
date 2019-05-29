@@ -40,12 +40,12 @@ function getRandomQuote(list) {
 }
 
 function printQuote(quotation) {
-    html += '<h2>quote: ' + quotation.quote + '</h2>';
-    html += '<p>source: ' + quotation.source+ '</p>';
-    html += '<p>citation: ' + quotation.citation + '</p>';
-    html += '<p>year: ' + quotation.year + '</p>';
+    html += '<h1 id="head">' + quotation.quote + '</h1>';
+    html += '<p class="paragraph">-' + quotation.source+ ', ';
+    html += '<span class="source">' + quotation.citation + '</span>, ';
+    html += quotation.year + '</p>';
+
     document.write(html);
 }
 
-var randQuote = getRandomQuote(quotes);
-printQuote(randQuote);
+
