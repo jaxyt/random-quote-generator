@@ -29,10 +29,15 @@ var quotes = [
     source: 'jb smoove', 
     citation: 'tosh.0', 
     year: 2019
+    },
+    {
+        quote: 'Humility is no substitute for a good personality.', 
+        source: 'Fran Leibowitz', 
+        citation: 'Metropolitan Life', 
+        year: 1978
     }
 ];
 
-var html = '';
 
 function getRandomQuote(list) {
     var randomIndex = Math.floor(Math.random() * list.length);
@@ -40,12 +45,9 @@ function getRandomQuote(list) {
 }
 
 function printQuote(quotation) {
-    html += '<h1 id="head">' + quotation.quote + '</h1>';
-    html += '<p class="paragraph">-' + quotation.source+ ', ';
-    html += '<span class="source">' + quotation.citation + '</span>, ';
-    html += quotation.year + '</p>';
-
-    document.write(html);
+    var output = document.getElementById('output');
+    output.innerHTML = '<h1 id="head">“' + quotation.quote + '”</h1>' + '<p class="paragraph">-' + quotation.source + ', <span class="citation">' + quotation.citation + '</span>, ' + quotation.year + '</p>';
 }
 
 
+ printQuote(getRandomQuote(quotes));
